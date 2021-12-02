@@ -1,9 +1,7 @@
-const fs = require("fs");
 const path = require("path");
+const { getInput } = require("../lib");
 
-const lines = fs
-  .readFileSync(path.join(__dirname, "input.txt"), "utf-8")
-  .split("\n");
+const lines = getInput(path.join(__dirname, "input.txt"));
 
 function part1() {
   let lastNum = null;
