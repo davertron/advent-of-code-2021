@@ -121,7 +121,33 @@ function part1Test() {
     console.log("Should be true: ", hasBingo(columnBingoBoard));
 }
 
-function part2() {}
+function part2() {
+    const { numbers, boards } = parseInput(lines);
+
+    let boardsLeft = [...boards];
+    let lastBoard = null;
+    let numIndex = 0;
+    let currentNum;
+    while (!lastBoard) {
+        currentNum = numbers[numIndex];
+        for (let board of boardsLeft) {
+            markBoard(board, currentNum);
+            if (hasBingo(board)) {
+                console.log("Bingo on board ", board);
+                boardsLeft = boardsLeft.filter((b) => b !== board);
+                if (boardsLeft.length === 0) {
+                    lastBoard = board;
+                }
+            }
+        }
+        numIndex++;
+    }
+    console.log("Last winning board: ", lastBoard);
+    const result = calculateResult(lastBoard, currentNum);
+
+    console.log("Part 2: ", result);
+}
 
 //part1Test();
 part1();
+part2();
