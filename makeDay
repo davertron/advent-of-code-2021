@@ -3,6 +3,9 @@
 echo 'Day number:'
 read day
 
+echo "" >> README.md
+echo "[Day ${day}](day${day}/index.js)" >> README.md
+
 dayFolder="day${day}"
 mkdir $dayFolder
 cd $dayFolder
