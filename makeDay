@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo 'Day number:'
+read day
+
+dayFolder="day${day}"
+mkdir $dayFolder
+cd $dayFolder
+touch input.txt
+touch sample.txt
+touch README.md
+cp ../_template.js index.js
+
+echo 'Done!'
