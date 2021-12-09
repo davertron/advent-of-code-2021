@@ -13,3 +13,5 @@
 [Day 6](day6/index.js)
 
 [Day 7](day7/index.js)
+
+[Day 8](day8/index.js)
