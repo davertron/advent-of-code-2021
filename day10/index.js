@@ -15,6 +15,13 @@ const POINTS = {
     ">": 25137,
 };
 
+const PART_2_POINTS = {
+    "(": 1,
+    "[": 2,
+    "{": 3,
+    "<": 4,
+};
+
 function isClosingCharacter(c) {
     return [")", "]", "}", ">"].includes(c);
 }
@@ -29,10 +36,10 @@ function isMatching(open, close) {
 
 function part1() {
     const lines = getInput("input.txt");
-    const stack = [];
     let points = 0;
     for (let line of lines) {
         let characters = line.split("");
+        const stack = [];
         for (let c of characters) {
             if (isClosingCharacter(c)) {
                 const lastOpening = stack.pop();
@@ -49,8 +56,37 @@ function part1() {
 }
 
 function part2() {
-    const lines = getInput("sample.txt");
-    console.log("Part 2: ", null);
+    const lines = getInput("input.txt");
+    let incompleteScores = [];
+    for (let line of lines) {
+        let characters = line.split("");
+        let isCorrupt = false;
+        const stack = [];
+        for (let c of characters) {
+            if (isClosingCharacter(c)) {
+                const lastOpening = stack.pop();
+                if (!isMatching(lastOpening, c)) {
+                    isCorrupt = true;
+                    break;
+                }
+            } else {
+                stack.push(c);
+            }
+        }
+        if (!isCorrupt && stack.length > 0) {
+            // Incomplete line
+            let points = 0;
+            while (stack.length > 0) {
+                const next = stack.pop();
+                points = points * 5 + PART_2_POINTS[next];
+            }
+            incompleteScores.push(points);
+        }
+    }
+    const middleScore = incompleteScores.sort((a, b) => a - b)[
+        Math.floor(incompleteScores.length / 2)
+    ];
+    console.log("Part 2: ", middleScore);
 }
 
 part1();
