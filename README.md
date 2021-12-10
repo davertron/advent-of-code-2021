@@ -1,19 +1,21 @@
 # Advent of Code 2021
 
-[Day 1](day1/index.js)
+[Day 1](day1/README.md)
 
-[Day 2](day2/index.js)
+[Day 2](day2/README.md)
 
-[Day 3](day3/index.js)
+[Day 3](day3/README.md)
 
-[Day 4](day4/index.js)
+[Day 4](day4/README.md)
 
-[Day 5](day5/index.js)
+[Day 5](day5/README.md)
 
-[Day 6](day6/index.js)
+[Day 6](day6/README.md)
 
-[Day 7](day7/index.js)
+[Day 7](day7/README.md)
 
-[Day 8](day8/index.js)
+[Day 8](day8/README.md)
 
-[Day 9](day9/index.js)
+[Day 9](day9/README.md)
+
+[Day 10](day10/README.md)
