@@ -1,5 +1,7 @@
 # Advent of Code 2021
 
+TODO: Add README's for days 1-4
+
 [Day 1](day1/README.md)
 
 [Day 2](day2/README.md)
