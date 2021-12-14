@@ -25,3 +25,5 @@ TODO: Add README's for days 1-4
 [Day 11](day11/README.md)
 
 [Day 12](day12/README.md)
+
+[Day 13](day13/README.md)
