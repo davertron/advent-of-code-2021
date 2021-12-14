@@ -92,8 +92,14 @@ function part1() {
 }
 
 function part2() {
-    const lines = getInput("sample.txt");
-    console.log("Part 2: ", null);
+    const lines = getInput("input.txt");
+    const { dots, folds } = parseInput(lines);
+    let newDots = dots;
+    for (let f of folds) {
+        newDots = fold(newDots, f);
+    }
+    console.log("Part 2: ");
+    printGrid(newDots);
 }
 
 part1();
