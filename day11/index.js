@@ -96,9 +96,25 @@ function part1() {
     console.log("Part 1: ", flashCount);
 }
 
+function isAllZeroes(grid) {
+    for (let row = 0; row < grid.length; row++) {
+        for (let column = 0; column < grid[row].length; column++) {
+            if (grid[row][column] !== 0) return false;
+        }
+    }
+
+    return true;
+}
+
 function part2() {
-    const lines = getInput("sample.txt");
-    console.log("Part 2: ", null);
+    const lines = getInput("input.txt");
+    const grid = parseGrid(lines);
+    let stepCount = 0;
+    while (!isAllZeroes(grid)) {
+        step(grid);
+        stepCount++;
+    }
+    console.log("Part 2: ", stepCount);
 }
 
 part1();
